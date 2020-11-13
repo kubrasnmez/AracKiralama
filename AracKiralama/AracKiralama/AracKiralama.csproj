@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F359DD79-F826-4C0F-8011-9F8546C66BC5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AracKiralama</RootNamespace>
+    <AssemblyName>AracKiralama</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary1">
+      <HintPath>..\..\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AracKiralamaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AracKiralamaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormArac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArac.Designer.cs">
+      <DependentUpon>FormArac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Arac.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\Kira.cs" />
+    <Compile Include="Entity\Marka.cs" />
+    <Compile Include="Entity\Model.cs" />
+    <Compile Include="Entity\Musteri.cs" />
+    <Compile Include="Entity\Odeme.cs" />
+    <Compile Include="Entity\Tip.cs" />
+    <Compile Include="Enums\ApplicationEnums.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKira.Designer.cs">
+      <DependentUpon>FormKira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarka.Designer.cs">
+      <DependentUpon>FormMarka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModel.Designer.cs">
+      <DependentUpon>FormModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMusteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMusteri.Designer.cs">
+      <DependentUpon>FormMusteri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOdeme.Designer.cs">
+      <DependentUpon>FormOdeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRaporArac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRaporArac.Designer.cs">
+      <DependentUpon>FormRaporArac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTip.Designer.cs">
+      <DependentUpon>FormTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011041517010_AracKiralamaDB.cs" />
+    <Compile Include="Migrations\202011041517010_AracKiralamaDB.designer.cs">
+      <DependentUpon>202011041517010_AracKiralamaDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011041906432_AracKiralamaDB1.cs" />
+    <Compile Include="Migrations\202011041906432_AracKiralamaDB1.designer.cs">
+      <DependentUpon>202011041906432_AracKiralamaDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011042245012_AracKiralamaDB2.cs" />
+    <Compile Include="Migrations\202011042245012_AracKiralamaDB2.designer.cs">
+      <DependentUpon>202011042245012_AracKiralamaDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011051937233_AracKiralamaDB3.cs" />
+    <Compile Include="Migrations\202011051937233_AracKiralamaDB3.designer.cs">
+      <DependentUpon>202011051937233_AracKiralamaDB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011052158537_AracKiralamaDB4.cs" />
+    <Compile Include="Migrations\202011052158537_AracKiralamaDB4.designer.cs">
+      <DependentUpon>202011052158537_AracKiralamaDB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011052206326_AracKiralamaDB5.cs" />
+    <Compile Include="Migrations\202011052206326_AracKiralamaDB5.designer.cs">
+      <DependentUpon>202011052206326_AracKiralamaDB5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011071612485_AracKiralamaDB6.cs" />
+    <Compile Include="Migrations\202011071612485_AracKiralamaDB6.designer.cs">
+      <DependentUpon>202011071612485_AracKiralamaDB6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011071749232_AracKiralamaDB7.cs" />
+    <Compile Include="Migrations\202011071749232_AracKiralamaDB7.designer.cs">
+      <DependentUpon>202011071749232_AracKiralamaDB7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011071815356_AracKiralamaDB8.cs" />
+    <Compile Include="Migrations\202011071815356_AracKiralamaDB8.designer.cs">
+      <DependentUpon>202011071815356_AracKiralamaDB8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011071843554_AracKiralamaDB9.cs" />
+    <Compile Include="Migrations\202011071843554_AracKiralamaDB9.designer.cs">
+      <DependentUpon>202011071843554_AracKiralamaDB9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011072115019_AracKiralamaDB10.cs" />
+    <Compile Include="Migrations\202011072115019_AracKiralamaDB10.designer.cs">
+      <DependentUpon>202011072115019_AracKiralamaDB10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011072249540_AracKiralamaDB11.cs" />
+    <Compile Include="Migrations\202011072249540_AracKiralamaDB11.designer.cs">
+      <DependentUpon>202011072249540_AracKiralamaDB11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011072341189_AracKiralamaDB12.cs" />
+    <Compile Include="Migrations\202011072341189_AracKiralamaDB12.designer.cs">
+      <DependentUpon>202011072341189_AracKiralamaDB12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011080001154_AracKiralamaDB13.cs" />
+    <Compile Include="Migrations\202011080001154_AracKiralamaDB13.designer.cs">
+      <DependentUpon>202011080001154_AracKiralamaDB13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011080036365_AracKiralamaDB14.cs" />
+    <Compile Include="Migrations\202011080036365_AracKiralamaDB14.designer.cs">
+      <DependentUpon>202011080036365_AracKiralamaDB14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081247563_AracKiralamaDB15.cs" />
+    <Compile Include="Migrations\202011081247563_AracKiralamaDB15.designer.cs">
+      <DependentUpon>202011081247563_AracKiralamaDB15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011082057459_AracKiralamaDB16.cs" />
+    <Compile Include="Migrations\202011082057459_AracKiralamaDB16.designer.cs">
+      <DependentUpon>202011082057459_AracKiralamaDB16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011082343262_AracKiralamaDB17.cs" />
+    <Compile Include="Migrations\202011082343262_AracKiralamaDB17.designer.cs">
+      <DependentUpon>202011082343262_AracKiralamaDB17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011090043091_AracKiralamaDB18.cs" />
+    <Compile Include="Migrations\202011090043091_AracKiralamaDB18.designer.cs">
+      <DependentUpon>202011090043091_AracKiralamaDB18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011091035022_AracKiralamaDB19.cs" />
+    <Compile Include="Migrations\202011091035022_AracKiralamaDB19.designer.cs">
+      <DependentUpon>202011091035022_AracKiralamaDB19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011091107001_AracKiralamaDB20.cs" />
+    <Compile Include="Migrations\202011091107001_AracKiralamaDB20.designer.cs">
+      <DependentUpon>202011091107001_AracKiralamaDB20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011121853352_AracKiralamaDB21.cs" />
+    <Compile Include="Migrations\202011121853352_AracKiralamaDB21.designer.cs">
+      <DependentUpon>202011121853352_AracKiralamaDB21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011121909044_AracKiralamaDB22.cs" />
+    <Compile Include="Migrations\202011121909044_AracKiralamaDB22.designer.cs">
+      <DependentUpon>202011121909044_AracKiralamaDB22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AracVM.cs" />
+    <Compile Include="ViewModel\KiraVM.cs" />
+    <Compile Include="ViewModel\MarkaVM.cs" />
+    <Compile Include="ViewModel\ModelVM.cs" />
+    <Compile Include="ViewModel\MusteriVM.cs" />
+    <Compile Include="ViewModel\OdemeVM.cs" />
+    <Compile Include="ViewModel\RaporAracVM.cs" />
+    <Compile Include="ViewModel\RaporMusteriVM.cs" />
+    <Compile Include="ViewModel\TipVM.cs" />
+    <EmbeddedResource Include="FormArac.resx">
+      <DependentUpon>FormArac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKira.resx">
+      <DependentUpon>FormKira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarka.resx">
+      <DependentUpon>FormMarka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModel.resx">
+      <DependentUpon>FormModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMusteri.resx">
+      <DependentUpon>FormMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOdeme.resx">
+      <DependentUpon>FormOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRaporArac.resx">
+      <DependentUpon>FormRaporArac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTip.resx">
+      <DependentUpon>FormTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011041517010_AracKiralamaDB.resx">
+      <DependentUpon>202011041517010_AracKiralamaDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011041906432_AracKiralamaDB1.resx">
+      <DependentUpon>202011041906432_AracKiralamaDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011042245012_AracKiralamaDB2.resx">
+      <DependentUpon>202011042245012_AracKiralamaDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011051937233_AracKiralamaDB3.resx">
+      <DependentUpon>202011051937233_AracKiralamaDB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011052158537_AracKiralamaDB4.resx">
+      <DependentUpon>202011052158537_AracKiralamaDB4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011052206326_AracKiralamaDB5.resx">
+      <DependentUpon>202011052206326_AracKiralamaDB5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011071612485_AracKiralamaDB6.resx">
+      <DependentUpon>202011071612485_AracKiralamaDB6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011071749232_AracKiralamaDB7.resx">
+      <DependentUpon>202011071749232_AracKiralamaDB7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011071815356_AracKiralamaDB8.resx">
+      <DependentUpon>202011071815356_AracKiralamaDB8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011071843554_AracKiralamaDB9.resx">
+      <DependentUpon>202011071843554_AracKiralamaDB9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011072115019_AracKiralamaDB10.resx">
+      <DependentUpon>202011072115019_AracKiralamaDB10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011072249540_AracKiralamaDB11.resx">
+      <DependentUpon>202011072249540_AracKiralamaDB11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011072341189_AracKiralamaDB12.resx">
+      <DependentUpon>202011072341189_AracKiralamaDB12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011080001154_AracKiralamaDB13.resx">
+      <DependentUpon>202011080001154_AracKiralamaDB13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011080036365_AracKiralamaDB14.resx">
+      <DependentUpon>202011080036365_AracKiralamaDB14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081247563_AracKiralamaDB15.resx">
+      <DependentUpon>202011081247563_AracKiralamaDB15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011082057459_AracKiralamaDB16.resx">
+      <DependentUpon>202011082057459_AracKiralamaDB16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011082343262_AracKiralamaDB17.resx">
+      <DependentUpon>202011082343262_AracKiralamaDB17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011090043091_AracKiralamaDB18.resx">
+      <DependentUpon>202011090043091_AracKiralamaDB18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011091035022_AracKiralamaDB19.resx">
+      <DependentUpon>202011091035022_AracKiralamaDB19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011091107001_AracKiralamaDB20.resx">
+      <DependentUpon>202011091107001_AracKiralamaDB20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011121853352_AracKiralamaDB21.resx">
+      <DependentUpon>202011121853352_AracKiralamaDB21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011121909044_AracKiralamaDB22.resx">
+      <DependentUpon>202011121909044_AracKiralamaDB22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="AracKiralamaDBDataSet.xsc">
+      <DependentUpon>AracKiralamaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AracKiralamaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AracKiralamaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AracKiralamaDBDataSet.xss">
+      <DependentUpon>AracKiralamaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AracKiralamaDBDataSet" targetNamespace="http://tempuri.org/AracKiralamaDBDataSet.xsd" xmlns:mstns="http://tempuri.org/AracKiralamaDBDataSet.xsd" xmlns="http://tempuri.org/AracKiralamaDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AracKiralamaDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AracKiralamaDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AracKiralama.Properties.Settings.GlobalReference.Default.AracKiralamaDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OdemelerTableAdapter" GeneratorDataComponentClassName="OdemelerTableAdapter" Name="Odemeler" UserDataComponentName="OdemelerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AracKiralamaDBConnectionString (Settings)" DbObjectName="AracKiralamaDB.dbo.Odemeler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT BaslangicTarih, BitisTarih, PlakaNo, MusteriTC, Marka, ToplamTutar FROM dbo.Odemeler</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BaslangicTarih" DataSetColumn="BaslangicTarih" />
+              <Mapping SourceColumn="BitisTarih" DataSetColumn="BitisTarih" />
+              <Mapping SourceColumn="PlakaNo" DataSetColumn="PlakaNo" />
+              <Mapping SourceColumn="MusteriTC" DataSetColumn="MusteriTC" />
+              <Mapping SourceColumn="Marka" DataSetColumn="Marka" />
+              <Mapping SourceColumn="ToplamTutar" DataSetColumn="ToplamTutar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AracKiralamaDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AracKiralamaDBDataSet" msprop:Generator_UserDSName="AracKiralamaDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Odemeler" msprop:Generator_TableClassName="OdemelerDataTable" msprop:Generator_TableVarName="tableOdemeler" msprop:Generator_TablePropName="Odemeler" msprop:Generator_RowDeletingName="OdemelerRowDeleting" msprop:Generator_RowChangingName="OdemelerRowChanging" msprop:Generator_RowEvHandlerName="OdemelerRowChangeEventHandler" msprop:Generator_RowDeletedName="OdemelerRowDeleted" msprop:Generator_UserTableName="Odemeler" msprop:Generator_RowChangedName="OdemelerRowChanged" msprop:Generator_RowEvArgName="OdemelerRowChangeEvent" msprop:Generator_RowClassName="OdemelerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BaslangicTarih" msprop:Generator_ColumnVarNameInTable="columnBaslangicTarih" msprop:Generator_ColumnPropNameInRow="BaslangicTarih" msprop:Generator_ColumnPropNameInTable="BaslangicTarihColumn" msprop:Generator_UserColumnName="BaslangicTarih" type="xs:dateTime" />
+              <xs:element name="BitisTarih" msprop:Generator_ColumnVarNameInTable="columnBitisTarih" msprop:Generator_ColumnPropNameInRow="BitisTarih" msprop:Generator_ColumnPropNameInTable="BitisTarihColumn" msprop:Generator_UserColumnName="BitisTarih" type="xs:dateTime" />
+              <xs:element name="PlakaNo" msprop:Generator_ColumnVarNameInTable="columnPlakaNo" msprop:Generator_ColumnPropNameInRow="PlakaNo" msprop:Generator_ColumnPropNameInTable="PlakaNoColumn" msprop:Generator_UserColumnName="PlakaNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MusteriTC" msprop:Generator_ColumnVarNameInTable="columnMusteriTC" msprop:Generator_ColumnPropNameInRow="MusteriTC" msprop:Generator_ColumnPropNameInTable="MusteriTCColumn" msprop:Generator_UserColumnName="MusteriTC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marka" msprop:Generator_ColumnVarNameInTable="columnMarka" msprop:Generator_ColumnPropNameInRow="Marka" msprop:Generator_ColumnPropNameInTable="MarkaColumn" msprop:Generator_UserColumnName="Marka" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ToplamTutar" msprop:Generator_ColumnVarNameInTable="columnToplamTutar" msprop:Generator_ColumnPropNameInRow="ToplamTutar" msprop:Generator_ColumnPropNameInTable="ToplamTutarColumn" msprop:Generator_UserColumnName="ToplamTutar" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
